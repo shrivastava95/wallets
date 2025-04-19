@@ -1,0 +1,243 @@
+/* Basic resets */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  /* max-width: 1280px; */ /* Removed max-width */
+  /* margin: 0 auto; */ /* Removed margin */
+  width: 100%; /* Ensure root takes full width */
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box; /* Include padding in width calc */
+}
+
+/* Add styles for the chart grid */
+.chart-grid {
+  display: grid;
+  /* Adjust the number of columns as needed */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 2rem; /* Spacing between charts */
+  margin-top: 2rem;
+}
+
+.chart-container {
+  border: 1px solid #333;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #1a1a1a; /* Darker background for contrast */
+}
+
+.chart-container h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1em;
+  word-wrap: break-word; /* Ensure long addresses don't overflow */
+}
+
+.chart-container-single {
+  border: 1px solid #333;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  margin-top: 1rem; /* Space below navigation */
+  /* Height will be determined by the inner div of PriceChartWidget */
+  height: 70vh; /* 70% of the viewport height */
+  display: flex; /* Use flexbox for centering content within */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  overflow: hidden; /* Hide potential iframe overflow */
+}
+
+/* Specific styles for Dexscreener embed */
+.chart-container-single.dexscreener-embed {
+     background-color: transparent; /* Remove the container background */
+     border: none; /* Remove the container border */
+     padding: 0; /* Remove container padding */
+     /* Height is already set above */
+}
+
+/* Ensure iframe takes up the full space */
+.chart-container-single iframe {
+    display: block; /* Remove potential extra space below */
+}
+
+.chart-container-single h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1em;
+  word-wrap: break-word; /* Ensure long addresses don't overflow */
+  align-items: center;
+}
+
+/* Add margin between token and dex navigation */
+.token-navigation {
+    margin-bottom: 0.5rem;
+}
+
+/* Styling for Axiom Link */
+.axiom-link-container {
+    margin-bottom: 1rem; /* Space below the Axiom link */
+    font-size: 0.9em;
+}
+
+.axiom-link-container a {
+    text-decoration: none;
+    color: #add8e6; /* Light blue color */
+    padding: 0.3em 0.6em;
+    border: 1px solid #add8e6;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.axiom-link-container a:hover {
+    background-color: #add8e6;
+    color: #1a1a1a;
+}
+
+.dex-navigation {
+    margin-bottom: 1rem; /* Space below DEX buttons */
+    display: flex;
+    justify-content: center; /* Center DEX buttons */
+    align-items: center;
+    gap: 0.5rem; /* Space between DEX buttons */
+}
+
+.dex-navigation span {
+    margin-right: 0.5rem;
+}
+
+.dex-navigation button.active {
+    border-color: #8888ff; /* Highlight active DEX button */
+    background-color: #3a3a3a;
+}
+
+.navigation {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation button {
+  padding: 0.5em 1em;
+}
+
+.navigation span {
+  margin: 0 1em;
+}
+
+/* Style for displaying the token address */
+.token-address {
+    font-family: monospace;
+    font-size: 0.9em;
+    background-color: #333;
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    margin-left: 0.5em;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.chart-type-navigation {
+    margin-bottom: 1rem; /* Space below chart type buttons */
+    display: flex;
+    justify-content: center; /* Center buttons */
+    align-items: center;
+    gap: 0.5rem; /* Space between buttons */
+}
+
+.chart-type-navigation span {
+     margin-right: 0.5rem;
+}
+
+.chart-type-navigation button.active {
+    border-color: #8888ff; /* Highlight active DEX button */
+    background-color: #3a3a3a;
+}
+
+/* Styles for Additional Token Info Section */
+.token-extra-data {
+    margin-top: 2rem; /* Space above this section */
+    padding: 1.5rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #1f1f1f; /* Slightly different background */
+    text-align: left; /* Align text left within this box */
+}
+
+.token-extra-data h3 {
+    margin-top: 0;
+    text-align: center; /* Center the heading */
+    margin-bottom: 1.5rem;
+}
+
+.token-extra-data p strong {
+    display: inline-block; /* Better spacing */
+    min-width: 100px; /* Align values */
+}
+
+.token-extra-data div strong {
+    display: block; /* Make buyer title block level */
+    margin-bottom: 0.5rem;
+}
+
+.buyer-list {
+    list-style: none;
+    padding-left: 0; /* Remove default padding */
+    margin-top: 0;
+    max-height: 300px; /* Limit height and add scroll */
+    overflow-y: auto; /* Add vertical scroll */
+    font-size: 0.9em;
+    background-color: #282828; /* Background for the list area */
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.buyer-list li {
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+}
+
+/* Use existing wallet-address style for consistency */
+.buyer-list .wallet-address {
+     background-color: #444; /* Slightly lighter background */
+}
