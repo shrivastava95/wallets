@@ -183,7 +183,7 @@ function App() {
                         </button>
                         <span>
                             Token {selectedTokenIndex + 1} of {tokenAddresses.length}
-                            <span className="token-address">({selectedTokenAddr ? selectedTokenAddr.substring(0, 6) + '...' : 'N/A'})</span>
+                            <span className="token-address">({selectedTokenAddr ? selectedTokenAddr : 'N/A'})</span>
                         </span>
                         <button onClick={handleNext} disabled={tokenAddresses.length <= 1}>
                             Next Token &gt;
