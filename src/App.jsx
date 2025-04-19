@@ -190,14 +190,23 @@ function App() {
                         </button>
                     </div>
 
-                    {/* Axiom Link Display */}
-                    {currentOhlcvData.axiomLink && (
-                        <div className="axiom-link-container">
+                    {/* Top Info: Axiom Link & ATH Stats */}
+                    <div className="top-info-container">
+                        {currentOhlcvData.axiomLink && (
+                            <div className="axiom-link-item"> {/* Wrap link */}
                             <a href={currentOhlcvData.axiomLink} target="_blank" rel="noopener noreferrer">
                                 Open on Axiom
                             </a>
-                        </div>
-                    )}
+                            </div>
+                        )}
+                        {/* Display ATH Info Here */}
+                        <p className="ath-info-item"> {/* Wrap ATH */}
+                            <strong>ATH (USD):</strong> {currentOhlcvData.calculatedAthUsd ?? 'N/A'}
+                        </p>
+                        <p className="ath-info-item"> {/* Wrap Est MCAP */}
+                            <strong>Est. ATH MCAP (USD):</strong> {currentOhlcvData.estimatedAthMarketCapUsd ?? 'N/A'}
+                        </p>
+                    </div>
 
                     {/* Chart Type Selection */}
                     <div className="chart-type-navigation">
@@ -296,12 +305,6 @@ function App() {
                     {/* --- Additional Token Info --- */}
                     <div className="token-extra-data">
                         <h3>Additional Info</h3>
-                        <p>
-                            <strong>ATH (USD):</strong> {currentOhlcvData.calculatedAthUsd ?? 'N/A'}
-                        </p>
-                        <p>
-                            <strong>Est. ATH MCAP (USD):</strong> {currentOhlcvData.estimatedAthMarketCapUsd ?? 'N/A'}
-                        </p>
                         <div>
                             <strong>First {currentOhlcvData.first50Buyers?.length ?? 0} Buyers:</strong>
                             {currentOhlcvData.first50Buyers && currentOhlcvData.first50Buyers.length > 0 ? (

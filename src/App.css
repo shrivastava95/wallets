@@ -79,15 +79,28 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Styling for Axiom Link */
-.axiom-link-container {
+/* Container for top info items */
+.top-info-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 1.5rem; /* Space between items */
     margin-bottom: 1rem; /* Space below the Axiom link */
+}
+
+/* Individual items in the top info container */
+.axiom-link-item, .ath-info-item {
     font-size: 0.9em;
 }
 
-.axiom-link-container a {
+.ath-info-item {
+    margin: 0; /* Remove default paragraph margins */
+    color: #ccc; /* Slightly dimmer than main text */
+}
+
+/* Styling for Axiom Link (now inside top-info-container) */
+.axiom-link-item a { /* Original selector */
     text-decoration: none;
-    /* Brighter blue */
     color: #61dafb; 
     padding: 0.3em 0.6em;
     border: 1px solid #61dafb; /* Match border color */
@@ -96,7 +109,7 @@ body {
     font-weight: 500; /* Make link bolder */
 }
 
-.axiom-link-container a:hover {
+.axiom-link-item a:hover {
     background-color: #61dafb;
     color: #1a1a1a;
 }
@@ -203,9 +216,12 @@ body {
     margin-top: 2rem; /* Space above this section */
     padding: 1.5rem;
     border: 1px solid #333;
+    /* Remove border if background is pure black */
+    /* border: none; */ 
     border-radius: 8px;
-    background-color: #1f1f1f; /* Slightly different background */
+    background-color: #000000; /* Black background */
     text-align: left; /* Align text left within this box */
+    color: #ffffff; /* White text */
 }
 
 .token-extra-data h3 {
@@ -217,6 +233,7 @@ body {
 .token-extra-data p strong {
     display: inline-block; /* Better spacing */
     min-width: 100px; /* Align values */
+    color: #ffffff; /* Ensure strong text is white */
 }
 
 .token-extra-data div strong {
